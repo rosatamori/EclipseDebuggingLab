@@ -14,12 +14,9 @@ three cases, printing would have shown you nothing useful at all.
 
 ### Before you start
 
-Watch the pre-class video, import the `DebuggerLab` project, and work through
-`VideoDemo.java`. You should be able to set a breakpoint, launch under the debugger,
+Watch the pre-class video and import the `DebuggerLab` project.
+You should be able to set a breakpoint, launch under the debugger,
 and use step over / step into / step return without looking anything up.
-
-> Never imported the project? **File ▸ Import ▸ General ▸ Existing Projects into
-> Workspace**, browse to the folder that directly contains `src`, **Finish**.
 
 ### Smoke test
 
@@ -330,24 +327,18 @@ Two warnings, and I mean these sincerely:
   wrong and *look at the actual values*. If your explanation doesn't match what the
   Variables view shows, your explanation is wrong.
 
-### Suggested tools per bug
+### Make the test part of the debugging!
 
-Don't overthink which to use — but if you're stuck:
-
-- Failing with an exception? Use the stack trace, and read it **bottom-up** to find
-  the last line of *your* code. Then set a breakpoint there. Also try
-  *Run ▸ Add Java Exception Breakpoint…* and pick the exception being thrown.
-- Something changed and you don't know who? **Watchpoint** (Station 5).
-- Wrong on one iteration out of many? **Conditional breakpoint** (Station 4).
-- Two things that look identical but don't behave identically? **Compare their ids**
-  (Station 2).
-- Stepped past the moment you needed? **Drop to Frame** (Station 6).
+When you know a test fails, that is usually where you can set your breakpoint. 
+Note that this means without written tests, it is difficult to leverage the full power of a debugger!
 
 ---
 
 ## What to submit
 
-A single PDF or Markdown document containing:
+A printed report with a copy submitted on Moodle as well as your Roster.java file.
+
+## Report should contain:
 
 **Your written answers to Checkpoints 1–6.**
 
@@ -367,21 +358,6 @@ A single PDF or Markdown document containing:
    and I would rather have your real opinion than the answer you think I want.
 
 Plus your fixed `Roster.java`, with all seven tests passing.
-
-### Grading
-
-| | |
-|---|---|
-| Checkpoints 1–6 | 30% |
-| Five bug reports, with screenshot evidence | 45% |
-| All seven tests passing | 15% |
-| Quality of your answers to question 6 across the five reports | 10% |
-
-That last 10% is not filler. The point of this lab is not that you fixed five bugs
-in a roster class you will never see again. It is that you leave knowing which
-questions the debugger answers *better than any other tool you have* — so that later
-this semester, when your linked list is silently dropping nodes, reaching for the
-debugger is your first instinct instead of your last resort.
 
 ### One last thing
 
