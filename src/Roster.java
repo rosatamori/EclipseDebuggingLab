@@ -45,7 +45,7 @@ public class Roster {
     /** Returns the best average in the roster. */
     static int highestAverage() {
         int best = 0;
-        for (int i = 0; i <= size; i++) {
+        for (int i = 0; i < size; i++) {
             int average = averageFor(i);
             if (average > best) {
                 best = average;
@@ -57,7 +57,7 @@ public class Roster {
     /** Returns the index of the student with this name, or -1. */
     static int findByName(String target) {
         for (int i = 0; i < size; i++) {
-            if (names[i] == target) {
+            if (names[i].equals(target)) {
                 return i;
             }
         }
@@ -67,7 +67,7 @@ public class Roster {
     /** Returns the index of the student with this ID, or -1. */
     static int findById(Integer target) {
         for (int i = 0; i < size; i++) {
-            if (ids[i] == target) {
+            if (ids[i].equals(target)) {
                 return i;
             }
         }
@@ -79,7 +79,13 @@ public class Roster {
      * without disturbing the real roster.
      */
     static int[][] backupScores() {
-        return scores.clone();
+    	//new outer array
+        int[][] newScores = new int[scores.length][];
+        //clone the inner arrays
+        for(int i = 0; i < size; i++) {
+        	newScores[i] = scores[i].clone();
+        }
+        return newScores;
     }
 
     /** Drops every student whose average is below 60. */
@@ -87,6 +93,7 @@ public class Roster {
         for (int i = 0; i < size; i++) {
             if (averageFor(i) < 60) {
                 removeAt(i);
+                i--;
             }
         }
     }
